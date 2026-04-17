@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los Móviles — Juan Carlos Torrens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-hero { padding: calc(var(--nav-h) + 80px) 0 64px; background: var(--off-white); }
+    .project-hero .container { display: flex; flex-direction: column; gap: 32px; }
+    .project-back { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--gray-600); transition: color .2s; }
+    .project-back:hover { color: var(--black); }
+    .project-meta { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+    .project-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .project-meta-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray-400); }
+    .project-meta-value { font-size: 15px; font-weight: 600; color: var(--black); }
+    .project-title-block { display: flex; flex-direction: column; gap: 16px; }
+    .project-cover { border-radius: var(--radius); overflow: hidden; background: var(--gray-200); aspect-ratio: 16/7; }
+    .project-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .project-content { padding: 80px 0 120px; }
+    .project-body { max-width: 800px; margin: 0 auto; }
+    .notion-content { font-family: var(--font-sans); color: var(--black); line-height: 1.75; font-size: 16px; white-space: normal; }
+    .notion-content h1, .notion-content h2, .notion-content h3 { font-family: var(--font-serif); font-weight: 700; letter-spacing: -.5px; color: var(--black); margin-top: 48px; margin-bottom: 16px; }
+    .notion-content h1 { font-size: 32px; } .notion-content h2 { font-size: 26px; } .notion-content h3 { font-size: 22px; }
+    .notion-content p { color: var(--gray-600); margin-bottom: 16px; line-height: 1.8; }
+    .notion-content strong { color: var(--black); font-weight: 600; }
+    .notion-content ul.bulleted-list { list-style: disc; padding-left: 24px; margin-bottom: 20px; }
+    .notion-content ul.bulleted-list li { color: var(--gray-600); margin-bottom: 8px; line-height: 1.75; list-style-type: disc; }
+    .notion-content figure.image { margin: 40px 0; border-radius: var(--radius); overflow: hidden; }
+    .notion-content figure.image a { display: block; }
+    .notion-content figure.image img { width: 100%; height: auto; max-width: 100%; display: block; border-radius: var(--radius); }
+    .notion-content figcaption { font-size: 13px; color: var(--gray-400); text-align: center; padding: 10px 0 0; font-style: italic; }
+    .notion-content .column-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; align-items: start; }
+    .notion-content .column { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+    .notion-content .column figure.image { margin: 0; }
+    .notion-content .callout { background: var(--gray-100); border-radius: var(--radius-sm); padding: 20px 24px; margin: 24px 0; border-left: 3px solid var(--accent); }
+    .project-back-bottom { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--gray-200); }
+    @media (max-width: 640px) { .notion-content .column-list { grid-template-columns: 1fr; } .project-meta { gap: 20px; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><img src="logo.svg" alt="JCT" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#experiencia">Experiencia</a></li>
+      <li><a href="index.html#portafolio">Portafolio</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="notion/Diseño para generar impacto y crear experiencias m/CV_JCT.pdf" download class="nav-cta" target="_blank" rel="noopener">Descargar CV</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <ul class="nav-mobile-links">
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#experiencia">Experiencia</a></li>
+      <li><a href="index.html#portafolio">Portafolio</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="notion/Diseño para generar impacto y crear experiencias m/CV_JCT.pdf" download class="nav-mobile-cta" target="_blank" rel="noopener">Descargar CV</a>
+  </div>
+
+  <!-- PROJECT HERO -->
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#portafolio" class="project-back">← Volver al portafolio</a>
+      <div class="project-title-block">
+        <div class="section-label">Caso de estudio</div>
+        <h1 class="section-title" style="margin-bottom: 0">Los Móviles</h1>
+        <div class="project-meta">
+          <div class="project-meta-item">
+            <span class="project-meta-label">Empresa</span>
+            <span class="project-meta-value">Los Moviles</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Rol</span>
+            <span class="project-meta-value">UX/UI Designer</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Año</span>
+            <span class="project-meta-value">2020</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-cover">
+        <img src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Los Moviles/Screens.png" alt="Los Móviles" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT CONTENT -->
+  <section class="project-content">
+    <div class="container">
+      <div class="project-body">
+        <div class="notion-content">
+<div style="display:contents" dir="auto"><p class=""><strong>Los Móviles</strong> es una aplicación móvil diseñada para facilitar a los usuarios en Santander, Colombia, la solicitud de servicios de taxi de manera eficiente y segura. Antes del proyecto, la aplicación enfrentaba desafíos significativos en términos de usabilidad y experiencia del usuario, lo que afectaba la satisfacción y la retención de clientes. El proyecto se enfocó en mejorar la interfaz de usuario, optimizar los flujos de proceso y asegurar una integración fluida tanto en plataformas Android como iOS.</p></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Los Moviles/Los_moviles.png"><img style="width:3600px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Los Moviles/Los_moviles.png"/></a></figure></div><div style="display:contents" dir="auto"><h3 class="">El reto:</h3></div><div style="display:contents" dir="auto"><p class="">El principal desafío era mejorar la experiencia de usuario en una aplicación existente con limitaciones tecnológicas y altas expectativas de los usuarios respecto a la velocidad y la confiabilidad del servicio de taxis.</p></div><div style="display:contents" dir="auto"><h3 class="">Proceso de diseño:</h3></div><div style="display:contents" dir="auto"><p class="">Se trabajó bajo la metodología Lean UX para iterar rápidamente sobre las hipótesis de diseño y producto. Antes de definir cualquier hipótesis, se realizó una fase de investigación que incluyó un benchmark de aplicaciones similares, entrevistas con usuarios frecuentes y análisis de datos. Este enfoque permitió identificar áreas críticas de mejora y establecer una base sólida para el rediseño.</p></div><div style="display:contents" dir="auto"><p class="">Durante el proceso iterativo, las hipótesis se validaron mediante wireframes de baja fidelidad, ya que su rápida construcción permitía obtener retroalimentación temprana sin demandar demasiado tiempo. Se llevaron a cabo pruebas con usuarios representativos y stakeholders clave, lo que facilitó la validación de conceptos de manera ágil y garantizó que las soluciones propuestas abordaran efectivamente las necesidades y expectativas del mercado objetivo.</p></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Los Moviles/image.png"><img style="width:709.9750366210938px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Los Moviles/image.png"/></a><figcaption><em>Wireflow / Enter Pickup Address</em></figcaption></figure></div><div style="display:contents" dir="auto"><h3 class="">Desarrollo del producto:</h3></div><div style="display:contents" dir="auto"><p class="">Las ideas generadas durante el proceso de diseño se convirtieron en soluciones concretas a través de una estrecha colaboración entre el equipo de diseño y desarrollo. Se realizaron múltiples pruebas de usabilidad con usuarios reales, lo que permitió ajustar y perfeccionar la interfaz de usuario antes del lanzamiento del MVP.</p></div><div style="display:contents" dir="auto"><p class="">Los entregables incluyeron mockups detallados del MVP que mostraban las nuevas funcionalidades integradas y los flujos de usuario optimizados, asegurando una experiencia de usuario coherente y satisfactoria desde la primera interacción.</p></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Los Moviles/Screens.png"><img style="width:709.9750366210938px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Los Moviles/Screens.png"/></a><figcaption><em>Mockups de la aplicación</em></figcaption></figure></div><div style="display:contents" dir="auto"><h3 class="">Resultados:</h3></div><div style="display:contents" dir="auto"><p class="">Tras la implementación, Los Móviles experimentó un aumento significativo en la tasa de adopción de la aplicación y una mejora notable en las métricas de retención de usuarios. La optimización de la experiencia de usuario no solo mejoró la satisfacción de los clientes, sino que también permitió a la empresa diferenciarse en un mercado competitivo de servicios de movilidad.</p></div><div style="display:contents" dir="auto"><h3 class="">Lecciones aprendidas:</h3></div><div style="display:contents" dir="auto"><p class="">El proyecto destacó la importancia de una investigación exhaustiva y la iteración continua en el diseño de productos digitales. Se identificaron mejores prácticas en la colaboración interdisciplinaria y la integración de feedback de usuarios en todas las etapas del desarrollo. Esta experiencia ha influido en mi enfoque hacia futuros proyectos, enfatizando la importancia de la experiencia del usuario como motor principal de la innovación y el éxito empresarial.</p></div>
+        </div>
+        <div class="project-back-bottom">
+          <a href="index.html#portafolio" class="btn btn-ghost">← Volver al portafolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© Juan Carlos Torrens 2026</p>
+  </footer>
+
+  <script>
+    document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 40);
+    });
+
+    const hamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('navMobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

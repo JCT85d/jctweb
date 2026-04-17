@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fastorder POS — Juan Carlos Torrens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-hero { padding: calc(var(--nav-h) + 80px) 0 64px; background: var(--off-white); }
+    .project-hero .container { display: flex; flex-direction: column; gap: 32px; }
+    .project-back { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--gray-600); transition: color .2s; }
+    .project-back:hover { color: var(--black); }
+    .project-meta { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+    .project-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .project-meta-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray-400); }
+    .project-meta-value { font-size: 15px; font-weight: 600; color: var(--black); }
+    .project-title-block { display: flex; flex-direction: column; gap: 16px; }
+    .project-cover { border-radius: var(--radius); overflow: hidden; background: var(--gray-200); aspect-ratio: 16/7; }
+    .project-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .project-content { padding: 80px 0 120px; }
+    .project-body { max-width: 800px; margin: 0 auto; }
+    .notion-content { font-family: var(--font-sans); color: var(--black); line-height: 1.75; font-size: 16px; white-space: normal; }
+    .notion-content h1, .notion-content h2, .notion-content h3 { font-family: var(--font-serif); font-weight: 700; letter-spacing: -.5px; color: var(--black); margin-top: 48px; margin-bottom: 16px; }
+    .notion-content h1 { font-size: 32px; } .notion-content h2 { font-size: 26px; } .notion-content h3 { font-size: 22px; }
+    .notion-content p { color: var(--gray-600); margin-bottom: 16px; line-height: 1.8; }
+    .notion-content strong { color: var(--black); font-weight: 600; }
+    .notion-content ul.bulleted-list { list-style: disc; padding-left: 24px; margin-bottom: 20px; }
+    .notion-content ul.bulleted-list li { color: var(--gray-600); margin-bottom: 8px; line-height: 1.75; list-style-type: disc; }
+    .notion-content figure.image { margin: 40px 0; border-radius: var(--radius); overflow: hidden; }
+    .notion-content figure.image a { display: block; }
+    .notion-content figure.image img { width: 100%; height: auto; max-width: 100%; display: block; border-radius: var(--radius); }
+    .notion-content figcaption { font-size: 13px; color: var(--gray-400); text-align: center; padding: 10px 0 0; font-style: italic; }
+    .notion-content .column-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; align-items: start; }
+    .notion-content .column { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+    .notion-content .column figure.image { margin: 0; }
+    .notion-content .callout { background: var(--gray-100); border-radius: var(--radius-sm); padding: 20px 24px; margin: 24px 0; border-left: 3px solid var(--accent); }
+    .project-back-bottom { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--gray-200); }
+    @media (max-width: 640px) { .notion-content .column-list { grid-template-columns: 1fr; } .project-meta { gap: 20px; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><img src="logo.svg" alt="JCT" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#experiencia">Experiencia</a></li>
+      <li><a href="index.html#portafolio">Portafolio</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="notion/Diseño para generar impacto y crear experiencias m/CV_JCT.pdf" download class="nav-cta" target="_blank" rel="noopener">Descargar CV</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <ul class="nav-mobile-links">
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#experiencia">Experiencia</a></li>
+      <li><a href="index.html#portafolio">Portafolio</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="notion/Diseño para generar impacto y crear experiencias m/CV_JCT.pdf" download class="nav-mobile-cta" target="_blank" rel="noopener">Descargar CV</a>
+  </div>
+
+  <!-- PROJECT HERO -->
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#portafolio" class="project-back">← Volver al portafolio</a>
+      <div class="project-title-block">
+        <div class="section-label">Caso de estudio</div>
+        <h1 class="section-title" style="margin-bottom: 0">Fastorder POS</h1>
+        <div class="project-meta">
+          <div class="project-meta-item">
+            <span class="project-meta-label">Empresa</span>
+            <span class="project-meta-value">Fastorder</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Rol</span>
+            <span class="project-meta-value">UX Designer</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Año</span>
+            <span class="project-meta-value">2022</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-cover">
+        <img src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/portada.jpg" alt="Fastorder POS" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT CONTENT -->
+  <section class="project-content">
+    <div class="container">
+      <div class="project-body">
+        <div class="notion-content">
+<div style="display:contents" dir="auto"><h3 class="">Creación de un Aplicativo POS</h3></div><div style="display:contents" dir="auto"><p class=""><strong>Empresa:</strong><br/>Fastorder / Arabia Saudita</p></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/portada.jpg"><img style="width:3360px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/portada.jpg"/></a><figcaption><em>Imagen referencial que ilustra el entorno de uso del producto digital Fastorder POS.</em></figcaption></figure></div><div style="display:contents" dir="auto"><h3 class=""><strong>Contexto:</strong></h3></div><div style="display:contents" dir="auto"><p class="">Fastorder, una empresa emergente en Arabia Saudita, identificó la necesidad de ofrecer una solución tecnológica moderna y eficiente para la gestión de ventas en puntos de venta (POS) dentro del sector de restaurantes. Como Diseñador UX/UI, mi rol consistió en liderar el diseño y la experiencia de usuario del aplicativo POS, desde su conceptualización hasta la entrega final.</p></div><div style="display:contents" dir="auto"><h3 class=""><strong>El reto:</strong></h3></div><div style="display:contents" dir="auto"><p class="">El principal reto era crear un aplicativo POS desde cero que pudiera competir con las soluciones ya presentes en el mercado saudita. Esto implicó:</p></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc">Analizar las mejores prácticas de la competencia y adaptar las funcionalidades según las necesidades locales.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc">Diseñar una interfaz intuitiva y rápida para un mercado donde la velocidad de atención al cliente es crucial.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc">Asegurar que el sistema fuera escalable y adaptable a diferentes modelos de negocio.</li></ul></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/Fastorder.png"><img style="width:709.9750366210938px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/Fastorder.png"/></a></figure></div><div style="display:contents" dir="auto"><h3 class=""><strong>Proceso de diseño:</strong></h3></div><div style="display:contents" dir="auto"><p class="">El proceso de diseño se llevó a cabo en varias fases, siguiendo un enfoque iterativo basado en metodologías ágiles:</p></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Investigación:</strong> Se realizaron benchmarks con soluciones POS internacionales y locales. También se llevaron a cabo entrevistas con comerciantes para identificar sus necesidades y dolores.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Definición de proto-personas:</strong> Se establecieron los distintos perfiles de usuarios que interactuarían con el aplicativo, asegurando una solución alineada con sus expectativas y flujos de trabajo.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Análisis de datos:</strong> Evaluación de funcionalidades críticas que debía tener el aplicativo para competir en el mercado.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Arquitectura de la Información:</strong> A partir del análisis de funcionalidades, contenido y perfiles de usuario, se estructuró la arquitectura de la información del aplicativo.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Wireframes y prototipos:</strong> Creación de flujos de usuario y prototipos de baja fidelidad que fueron validados con stakeholders.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Co-creación:</strong> Se involucró a usuarios clave durante todo el proceso para asegurar una solución centrada en sus necesidades.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Iteración:</strong> Se realizaron pruebas de usabilidad y ajustes con base en el feedback de los usuarios.</li></ul></div><div style="display:contents" dir="auto"><div class="column-list"><div style="display:contents" dir="auto"><div style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure class="image" style="text-align:center"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/image.png"><img style="width:288px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/image.png"/></a><figcaption><em>Protopersonas para comprenden el contexto en el que se utilizará el aplicativo POS</em></figcaption></figure></div></div></div><div style="display:contents" dir="auto"><div style="width:50.000000000000014%" class="column"><div style="display:contents" dir="ltr"><figure class="image" style="text-align:left"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/Arquitectura_de_Informacin.svg"><img style="width:332px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/Arquitectura_de_Informacin.svg"/></a><figcaption><em>Arquitectura de información general del aplicativo POS</em></figcaption></figure></div></div></div></div></div><div style="display:contents" dir="auto"><h3 class=""><strong>Desarrollo del producto:</strong></h3></div><div style="display:contents" dir="auto"><p class="">El diseño del aplicativo POS evolucionó a través de una estrecha colaboración con el equipo de desarrollo. Las principales entregas incluyeron:</p></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc">Interfaces optimizadas para tablets.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc">Diseño de flujos rápidos para ventas y pagos.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc">Implementación de funcionalidades clave como inventario en tiempo real y reportes de ventas.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc">Pruebas exhaustivas de usabilidad para garantizar una experiencia fluida.</li></ul></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/iPad_Pro_9.7_White_Mockup.jpg"><img style="width:709.9874877929688px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Fastorder POS/iPad_Pro_9.7_White_Mockup.jpg"/></a><figcaption><em>Wireframes de alta fidelidad creados en Adobe XD</em></figcaption></figure></div><div style="display:contents" dir="auto"><h3 class="">Impacto:</h3></div><div style="display:contents" dir="auto"><p class="">FastOrder POS permitio optimizar la experiencia de toma de pedidos y gestión de pagos en restaurantes y cafeterías de Arabia Saudita. A través de un proceso centrado en el usuario, se desarrolló una solución intuitiva y eficiente, alineada con las necesidades del personal y los dueños de negocios. La digitalización de estos procesos permitió reducir errores, agilizar transacciones y proporcionar información clave para la toma de decisiones estratégicas.</p></div><div style="display:contents" dir="auto"><h3 class=""><strong>Lecciones aprendidas:</strong></h3></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Investigación previa:</strong> La fase de análisis de mercado fue fundamental para definir una propuesta diferenciadora.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Iteración constante:</strong> Mantener un enfoque iterativo permitió ajustar el diseño a las necesidades reales de los usuarios.</li></ul></div><div style="display:contents" dir="auto"><ul class="bulleted-list"><li style="list-style-type:disc"><strong>Co-creación efectiva:</strong> Involucrar a los comerciantes desde el principio fue clave para el éxito del proyecto.</li></ul></div>
+        </div>
+        <div class="project-back-bottom">
+          <a href="index.html#portafolio" class="btn btn-ghost">← Volver al portafolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© Juan Carlos Torrens 2026</p>
+  </footer>
+
+  <script>
+    document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 40);
+    });
+
+    const hamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('navMobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

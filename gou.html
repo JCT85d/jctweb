@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GOU Pagos Electrónicos — Juan Carlos Torrens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-hero { padding: calc(var(--nav-h) + 80px) 0 64px; background: var(--off-white); }
+    .project-hero .container { display: flex; flex-direction: column; gap: 32px; }
+    .project-back { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--gray-600); transition: color .2s; }
+    .project-back:hover { color: var(--black); }
+    .project-meta { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+    .project-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .project-meta-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray-400); }
+    .project-meta-value { font-size: 15px; font-weight: 600; color: var(--black); }
+    .project-title-block { display: flex; flex-direction: column; gap: 16px; }
+    .project-cover { border-radius: var(--radius); overflow: hidden; background: var(--gray-200); aspect-ratio: 16/7; }
+    .project-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .project-content { padding: 80px 0 120px; }
+    .project-body { max-width: 800px; margin: 0 auto; }
+    .notion-content { font-family: var(--font-sans); color: var(--black); line-height: 1.75; font-size: 16px; white-space: normal; }
+    .notion-content h1, .notion-content h2, .notion-content h3 { font-family: var(--font-serif); font-weight: 700; letter-spacing: -.5px; color: var(--black); margin-top: 48px; margin-bottom: 16px; }
+    .notion-content h1 { font-size: 32px; } .notion-content h2 { font-size: 26px; } .notion-content h3 { font-size: 22px; }
+    .notion-content p { color: var(--gray-600); margin-bottom: 16px; line-height: 1.8; }
+    .notion-content strong { color: var(--black); font-weight: 600; }
+    .notion-content ul.bulleted-list { list-style: disc; padding-left: 24px; margin-bottom: 20px; }
+    .notion-content ul.bulleted-list li { color: var(--gray-600); margin-bottom: 8px; line-height: 1.75; list-style-type: disc; }
+    .notion-content figure.image { margin: 40px 0; border-radius: var(--radius); overflow: hidden; }
+    .notion-content figure.image a { display: block; }
+    .notion-content figure.image img { width: 100%; height: auto; max-width: 100%; display: block; border-radius: var(--radius); }
+    .notion-content figcaption { font-size: 13px; color: var(--gray-400); text-align: center; padding: 10px 0 0; font-style: italic; }
+    .notion-content .column-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 40px 0; align-items: start; }
+    .notion-content .column { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+    .notion-content .column figure.image { margin: 0; }
+    .notion-content .callout { background: var(--gray-100); border-radius: var(--radius-sm); padding: 20px 24px; margin: 24px 0; border-left: 3px solid var(--accent); }
+    .project-back-bottom { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--gray-200); }
+    @media (max-width: 640px) { .notion-content .column-list { grid-template-columns: 1fr; } .project-meta { gap: 20px; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><img src="logo.svg" alt="JCT" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#experiencia">Experiencia</a></li>
+      <li><a href="index.html#portafolio">Portafolio</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="notion/Diseño para generar impacto y crear experiencias m/CV_JCT.pdf" download class="nav-cta" target="_blank" rel="noopener">Descargar CV</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <ul class="nav-mobile-links">
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#experiencia">Experiencia</a></li>
+      <li><a href="index.html#portafolio">Portafolio</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="notion/Diseño para generar impacto y crear experiencias m/CV_JCT.pdf" download class="nav-mobile-cta" target="_blank" rel="noopener">Descargar CV</a>
+  </div>
+
+  <!-- PROJECT HERO -->
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#portafolio" class="project-back">← Volver al portafolio</a>
+      <div class="project-title-block">
+        <div class="section-label">Caso de estudio</div>
+        <h1 class="section-title" style="margin-bottom: 0">GOU Pagos Electrónicos</h1>
+        <div class="project-meta">
+          <div class="project-meta-item">
+            <span class="project-meta-label">Empresa</span>
+            <span class="project-meta-value">Dale · Grupo Aval</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Rol</span>
+            <span class="project-meta-value">UX Designer</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Año</span>
+            <span class="project-meta-value">2021</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-cover">
+        <img src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/banner.png" alt="GOU Pagos Electrónicos" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT CONTENT -->
+  <section class="project-content">
+    <div class="container">
+      <div class="project-body">
+        <div class="notion-content">
+<div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/banner.png"><img style="width:708px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/banner.png"/></a></figure></div><div style="display:contents" dir="auto"><p class="">Diseñar una plataforma que tenga como objetivo democratizar el acceso a pagos electrónicos para emprendedores, pequeños comerciantes y profesionales independientes fue un reto maravilloso. GOU es la solución de digitalización que, con un equipo multidisciplinario, creamos para el Grupo Aval. Fue todo un reto del que hoy en día me siento orgulloso.<br/></p></div><div style="display:contents" dir="auto"><p class=""><strong>¿Como comenzamos este reto?</strong></p></div><div style="display:contents" dir="auto"><p class="">El principal desafío fue desarrollar un sistema de pagos que abordara los problemas más comunes entre los emprendedores, especialmente aquellos sin presencia digital. Era crucial ofrecer una alternativa a los pagos en efectivo, mediante herramientas como un enlace de pagos y un código QR interoperable. Estos elementos permitirían a los comerciantes recibir pagos electrónicos sin la necesidad de tener una tienda en línea.</p></div><div style="display:contents" dir="auto"><p class=""> Otra barrera importante fue la informalidad que caracteriza a muchos de estos emprendedores. Para abordar este reto, el equipo visionó la creación de micrositios de manera sencilla, donde los comerciantes pudieran gestionar su inventario de productos. Además, el sistema debía ser lo suficientemente inteligente como para retroalimentar automáticamente el inventario en tiempo real, de modo que, cuando un producto se agotara, el sistema lo indicara y evitara sobreventas.</p></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/zapatos_primera_versin2.jpg"><img style="width:708px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/zapatos_primera_versin2.jpg"/></a></figure></div><div style="display:contents" dir="auto"><p class=""><strong>El proceso de diseño</strong></p></div><div style="display:contents" dir="auto"><p class="">El equipo detrás de Gou se centró en un diseño iterativo y colaborativo. La creación de los micrositios y las soluciones de pago electrónico se trabajó estrechamente con los comerciantes para entender sus necesidades. A través de talleres y sesiones de co-creación, se identificaron las funcionalidades críticas, como la facilidad de generar un link de pago y la interoperabilidad del QR.</p></div><div style="display:contents" dir="auto"><p class="">La simplicidad fue clave en la experiencia de usuario, asegurando que los emprendedores pudieran adoptar la tecnología fácilmente. Además, se realizaron pruebas de usabilidad para optimizar el flujo de creación de micrositios e integrar la retroalimentación automática del inventario.</p></div><div style="display:contents" dir="auto"><div class="column-list"><div style="display:contents" dir="auto"><div style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_4.48.12_PM.jpeg"><img style="width:707.9874877929688px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_4.48.12_PM.jpeg"/></a></figure></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_5.04.46_PM.jpeg"><img style="width:1600px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_5.04.46_PM.jpeg"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div style="width:50.000000000000014%" class="column"><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_4.58.20_PM.jpeg"><img style="width:707.9750366210938px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_4.58.20_PM.jpeg"/></a></figure></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_5.09.30_PM.jpeg"><img style="width:1594px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_5.09.30_PM.jpeg"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p class=""><strong>Resultados</strong></p></div><div style="display:contents" dir="auto"><p class="">El impacto de Gou fue significativo, beneficiando a más de 2,5 millones de negocios, tanto formales como informales. Esto permitió a los comerciantes ofrecer una imagen más profesional al proporcionar medios de pago modernos a sus clientes. Asimismo, la implementación del sistema de inventario mejoró notablemente la organización y trazabilidad del stock de productos, ayudando a los emprendedores a gestionar su negocio de manera más eficiente y estructurada.</p></div><div style="display:contents" dir="auto"><p class="">Además, Gou contribuyó a la transformación digital de estos pequeños comerciantes, brindándoles herramientas que no solo les ayudaron a incrementar sus ventas, sino también a crecer como negocios.</p></div><div style="display:contents" dir="ltr"><figure class="image"><a href="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_4.52.18_PM.jpeg"><img style="width:707.9874877929688px" src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/GOU Pagos Electronicos/WhatsApp_Image_2024-09-23_at_4.52.18_PM.jpeg"/></a></figure></div><div style="display:contents" dir="auto"><p class=""><strong>Lecciones aprendidas</strong></p></div><div style="display:contents" dir="auto"><p class="">Este proyecto demostró la importancia de crear soluciones tecnológicas inclusivas, diseñadas para resolver los problemas específicos de los pequeños comerciantes. Lograr que una tecnología compleja como los pagos electrónicos y la gestión de inventarios fuera accesible y fácil de usar fue un desafío, pero el enfoque en la simplicidad y la colaboración con los usuarios finales fue clave para el éxito.</p></div><div style="display:contents" dir="auto"><p class="">A través de Gou, el equipo aprendió que la mejor manera de ayudar a los emprendedores es brindándoles herramientas que simplifiquen sus operaciones y que se adapten a sus necesidades particulares, impulsando así la formalización y el crecimiento de sus negocios.</p></div>
+        </div>
+        <div class="project-back-bottom">
+          <a href="index.html#portafolio" class="btn btn-ghost">← Volver al portafolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© Juan Carlos Torrens 2026</p>
+  </footer>
+
+  <script>
+    document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 40);
+    });
+
+    const hamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('navMobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>
