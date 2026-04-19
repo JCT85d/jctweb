@@ -116,7 +116,8 @@ ul  { list-style: none; }
     "bottom right";
   background: var(--white);
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .hero-left {
@@ -170,7 +171,7 @@ ul  { list-style: none; }
 .hero-right {
   grid-area: right;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   z-index: 1;
 }
 
