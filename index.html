@@ -528,6 +528,7 @@
 
       let opened = false;
       let welcomed = false;
+      let sessionId = null;
 
       function addMessage(text, from) {
         const row = document.createElement('div');
@@ -560,6 +561,9 @@
         win.classList.add('is-open');
         win.setAttribute('aria-hidden', 'false');
         toggle.setAttribute('aria-expanded', 'true');
+        if (!sessionId) {
+          sessionId = 'jct-chat-' + Date.now();
+        }
         if (!welcomed) {
           welcomed = true;
           addMessage('hola, soy JCT. ¿en qué puedo ayudarte?', 'bot');
@@ -592,7 +596,7 @@
           const res = await fetch(WEBHOOK_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: text })
+            body: JSON.stringify({ message: text, sessionId: sessionId })
           });
 
           let reply = 'No pude obtener respuesta en este momento.';
