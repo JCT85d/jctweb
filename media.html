@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Med iA — Juan Carlos Torrens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .project-hero {
+      padding: calc(var(--nav-h) + 80px) 0 64px;
+      background: var(--off-white);
+    }
+    .project-hero .container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .project-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color .2s;
+    }
+    .project-back:hover { color: var(--black); }
+    .project-meta {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .project-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .project-meta-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .project-meta-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .project-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .project-cover {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--gray-200);
+      aspect-ratio: 16/7;
+    }
+    .project-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 80px 0 120px;
+    }
+    .project-body {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .notion-content {
+      font-family: var(--font-sans);
+      color: var(--black);
+      line-height: 1.75;
+      font-size: 16px;
+      white-space: normal;
+    }
+    .notion-content h1,
+    .notion-content h2,
+    .notion-content h3 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      letter-spacing: -.5px;
+      color: var(--black);
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+    .notion-content h1 { font-size: 32px; }
+    .notion-content h2 { font-size: 26px; }
+    .notion-content h3 { font-size: 22px; }
+    .notion-content p {
+      color: var(--gray-600);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .notion-content strong { color: var(--black); font-weight: 600; }
+    .notion-content ul.bulleted-list {
+      list-style: disc;
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+    .notion-content ul.bulleted-list li {
+      color: var(--gray-600);
+      margin-bottom: 8px;
+      line-height: 1.75;
+      list-style-type: disc;
+    }
+    .notion-content figure.image {
+      margin: 40px 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .notion-content figure.image a { display: block; }
+    .notion-content figure.image img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      border-radius: var(--radius);
+    }
+    .notion-content figcaption {
+      font-size: 13px;
+      color: var(--gray-400);
+      text-align: center;
+      padding: 10px 0 0;
+      font-style: italic;
+    }
+    .notion-content .column-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 40px 0;
+      align-items: start;
+    }
+    .notion-content .column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+    .notion-content .column figure.image { margin: 0; }
+    .notion-content .callout {
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-left: 3px solid var(--accent);
+    }
+    .project-back-bottom {
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .metric-card {
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      text-align: center;
+    }
+    .metric-number {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .metric-label {
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+    @media (max-width: 640px) {
+      .notion-content .column-list { grid-template-columns: 1fr; }
+      .project-meta { gap: 20px; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><img src="logo.svg" alt="JCT" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#experiencia">Experiencia</a></li>
+      <li><a href="index.html#portafolio">Portafolio</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="notion/Diseño para generar impacto y crear experiencias m/CV_JCT.pdf" download class="nav-cta" target="_blank" rel="noopener">Descargar CV</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <ul class="nav-mobile-links">
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#experiencia">Experiencia</a></li>
+      <li><a href="index.html#portafolio">Portafolio</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <a href="notion/Diseño para generar impacto y crear experiencias m/CV_JCT.pdf" download class="nav-mobile-cta" target="_blank" rel="noopener">Descargar CV</a>
+  </div>
+
+  <!-- PROJECT HERO -->
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#portafolio" class="project-back">← Volver al portafolio</a>
+      <div class="project-title-block">
+        <div class="section-label">Caso de estudio</div>
+        <h1 class="section-title" style="margin-bottom: 0">Med iA</h1>
+        <div class="project-meta">
+          <div class="project-meta-item">
+            <span class="project-meta-label">Cliente</span>
+            <span class="project-meta-value">Ecocenter – Bucaramanga</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Rol</span>
+            <span class="project-meta-value">AI Product Designer</span>
+          </div>
+          <div class="project-meta-item">
+            <span class="project-meta-label">Año</span>
+            <span class="project-meta-value">2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-cover">
+        <img src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Med IA/Frame 1.png" alt="Med iA — Dashboard de informes ecográficos" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT CONTENT -->
+  <section class="project-content">
+    <div class="container">
+      <div class="project-body">
+        <div class="notion-content">
+
+          <div style="display:contents" dir="auto">
+            <p>Med iA es un sistema de automatización de informes ecográficos por voz desarrollado para Ecocenter, una IPS de Bucaramanga con un volumen de 700 estudios mensuales. La herramienta combina dictado de voz con inteligencia artificial para redactar, estructurar y entregar informes clínicos en menos de 3 minutos, directamente por WhatsApp.</p>
+          </div>
+
+          <h2>El problema</h2>
+          <div style="display:contents" dir="auto">
+            <p>Los médicos ecografistas dedicaban entre <strong>20 y 30 minutos por informe</strong> al proceso de digitación manual. En una IPS con 700 estudios mensuales, esto representaba más de <strong>350 horas perdidas al mes</strong> en trabajo administrativo —tiempo que podría invertirse en atención al paciente.</p>
+            <p>El flujo tradicional era lento, propenso a errores y generaba cuellos de botella en la entrega de resultados, afectando tanto la experiencia del paciente como la capacidad operativa del centro.</p>
+          </div>
+
+          <div class="notion-content callout">
+            <strong>Insight clave:</strong> El médico no tiene problema en verbalizar su diagnóstico. El problema es el paso intermedio: pasar de voz a un documento clínico estructurado y normado.
+          </div>
+
+          <h2>La solución</h2>
+          <div style="display:contents" dir="auto">
+            <p>Un flujo de tres pasos que elimina la fricción del proceso:</p>
+            <ul class="bulleted-list">
+              <li><strong>Dictado de voz:</strong> El médico dicta su diagnóstico durante o después del estudio.</li>
+              <li><strong>IA redacta:</strong> El sistema procesa el audio, estructura el contenido y genera un informe clínico en lenguaje normado.</li>
+              <li><strong>Entrega instantánea:</strong> El PDF clínico se envía al paciente por WhatsApp en menos de 3 minutos.</li>
+            </ul>
+          </div>
+
+          <figure class="image">
+            <img src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Med IA/ThinkPad X1 Carbon right label.png" alt="Med iA en uso — dispositivo médico" />
+            <figcaption>El sistema opera desde cualquier dispositivo en el consultorio, sin requerir hardware adicional.</figcaption>
+          </figure>
+
+          <h2>Funcionalidades clave</h2>
+          <div style="display:contents" dir="auto">
+            <ul class="bulleted-list">
+              <li><strong>Acceso Controlado:</strong> Sistema de autenticación por roles que diferencia médicos, administrativos y pacientes, garantizando la confidencialidad de los expedientes clínicos.</li>
+              <li><strong>Dashboard:</strong> Panel centralizado para monitorear el estado de los estudios en tiempo real: dictados pendientes, informes en proceso y reportes entregados.</li>
+              <li><strong>Gestión de Expedientes:</strong> Historial completo por paciente con acceso a todos sus estudios anteriores, facilitando el seguimiento clínico y la comparativa de resultados.</li>
+              <li><strong>Entrega Instantánea:</strong> Integración directa con WhatsApp para envío automático del PDF al paciente al finalizar el informe, sin pasos adicionales para el médico.</li>
+            </ul>
+          </div>
+
+          <div class="column-list">
+            <div class="column">
+              <figure class="image">
+                <img src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Med IA/Frame 2.png" alt="Interfaz de gestión de informes Med iA" />
+                <figcaption>Vista de gestión de expedientes y estados de informes.</figcaption>
+              </figure>
+            </div>
+            <div class="column">
+              <figure class="image">
+                <img src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Med IA/WhatsApp Image 2026-04-08 at 12.08.53 PM.jpeg" alt="Entrega de informe por WhatsApp" />
+                <figcaption>El paciente recibe su informe en PDF directamente por WhatsApp.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <h2>Resultados</h2>
+          <div style="display:contents" dir="auto">
+            <p>La implementación de Med iA transformó el flujo operativo de Ecocenter de manera medible:</p>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-number">2 min</div>
+              <div class="metric-label">Tiempo promedio por informe</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-number">90%</div>
+              <div class="metric-label">Reducción en tiempo de digitación</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-number">+1000</div>
+              <div class="metric-label">Estudios procesados por mes</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-number">100%</div>
+              <div class="metric-label">Cumplimiento normativa SERAM</div>
+            </div>
+          </div>
+
+          <div style="display:contents" dir="auto">
+            <p>La capacidad operativa aumentó de 700 a más de 1000 estudios mensuales sin incrementar el personal médico. Los médicos recuperaron tiempo para la atención al paciente, y la IPS mejoró su posicionamiento competitivo ofreciendo resultados en minutos en lugar de días.</p>
+          </div>
+
+        </div>
+        <div class="project-back-bottom">
+          <a href="index.html#portafolio" class="btn btn-ghost">← Volver al portafolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© Juan Carlos Torrens 2026</p>
+  </footer>
+
+  <script>
+    document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('nav-scrolled', window.scrollY > 40);
+    });
+
+    const hamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('navMobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -170,6 +170,20 @@
 
       <div class="pf-grid">
 
+        <a class="pf-card" href="media.html">
+          <div class="pf-img">
+            <img src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/Med IA/banner.png" alt="Med iA" />
+            <div class="pf-hover">
+              <span class="pf-role">AI Product Design</span>
+              <span class="pf-year">2026</span>
+            </div>
+          </div>
+          <div class="pf-info">
+            <h3 class="pf-name">Med iA</h3>
+            <p class="pf-company">Sistema de automatización de informes ecográficos por voz. Thorrens Digital · 2026</p>
+          </div>
+        </a>
+
         <a class="pf-card" href="vtex.html">
           <div class="pf-img">
             <img src="notion/Diseño para generar impacto y crear experiencias m/Portafolio/VTEX Live Shopping/maxresdefault.jpg" alt="VTEX Live Shopping" />
@@ -226,6 +240,7 @@
           </div>
         </a>
 
+
       </div>
     </div>
   </section>
@@ -238,6 +253,15 @@
       <p class="section-intro">Haz clic en cualquier certificación para ver el certificado.</p>
 
       <div class="certs-grid">
+
+        <button class="cert-card"
+          data-title="AI Fluency: Framework &amp; Foundations"
+          data-cert="notion/Diseño para generar impacto y crear experiencias m/anthropic/certificado.jpg">
+          <div class="cert-logo-wrap">
+            <img src="notion/Diseño para generar impacto y crear experiencias m/anthropic/Logo.png" alt="Anthropic" />
+          </div>
+          <p class="cert-name">AI Fluency: Framework &amp; Foundations</p>
+        </button>
 
         <button class="cert-card"
           data-title="Crear Agentes de IA con n8n"
@@ -400,6 +424,30 @@
     <p>© Juan Carlos Torrens 2026</p>
   </footer>
 
+  <!-- CHAT FLOTANTE JCT -->
+  <div class="jct-chat" id="jctChat">
+    <div class="jct-chat-window" id="jctChatWindow" role="dialog" aria-modal="true" aria-labelledby="jctChatTitle" aria-hidden="true">
+      <div class="jct-chat-header">
+        <img src="SVG/AVATAR.svg" alt="" class="jct-chat-avatar" />
+        <div class="jct-chat-headtext">
+          <p class="jct-chat-name" id="jctChatTitle">JCT</p>
+          <p class="jct-chat-status">Asistente IA</p>
+        </div>
+        <button class="jct-chat-close" id="jctChatClose" aria-label="Cerrar chat">&times;</button>
+      </div>
+      <div class="jct-chat-messages" id="jctChatMessages"></div>
+      <form class="jct-chat-inputbar" id="jctChatForm">
+        <input type="text" id="jctChatInput" class="jct-chat-input" placeholder="Escribe un mensaje…" autocomplete="off" />
+        <button type="submit" class="jct-chat-send" aria-label="Enviar mensaje">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+    </div>
+    <button class="jct-chat-toggle" id="jctChatToggle" aria-label="Abrir chat con JCT" aria-expanded="false">
+      <img src="SVG/AVATAR.svg" alt="JCT" />
+    </button>
+  </div>
+
   <script>
     // Hamburger menu
     const hamburger = document.getElementById('navHamburger');
@@ -465,6 +513,106 @@
     modalClose.addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // Chat flotante JCT
+    (function () {
+      const WEBHOOK_URL = 'https://jctdesign.app.n8n.cloud/webhook/3875c3e0-4f77-457d-ad27-1de0367c5a4f';
+
+      const chat      = document.getElementById('jctChat');
+      const toggle    = document.getElementById('jctChatToggle');
+      const win       = document.getElementById('jctChatWindow');
+      const closeBtn  = document.getElementById('jctChatClose');
+      const messages  = document.getElementById('jctChatMessages');
+      const form      = document.getElementById('jctChatForm');
+      const input     = document.getElementById('jctChatInput');
+
+      let opened = false;
+      let welcomed = false;
+
+      function addMessage(text, from) {
+        const row = document.createElement('div');
+        row.className = 'jct-msg jct-msg-' + from;
+        const bubble = document.createElement('div');
+        bubble.className = 'jct-msg-bubble';
+        bubble.textContent = text;
+        row.appendChild(bubble);
+        messages.appendChild(row);
+        messages.scrollTop = messages.scrollHeight;
+        return row;
+      }
+
+      function showTyping() {
+        const row = document.createElement('div');
+        row.className = 'jct-msg jct-msg-bot jct-msg-typing';
+        row.id = 'jctTyping';
+        row.innerHTML = '<div class="jct-msg-bubble jct-typing-dots"><span></span><span></span><span></span></div>';
+        messages.appendChild(row);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      function hideTyping() {
+        const el = document.getElementById('jctTyping');
+        if (el) el.remove();
+      }
+
+      function openChat() {
+        opened = true;
+        win.classList.add('is-open');
+        win.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        if (!welcomed) {
+          welcomed = true;
+          addMessage('hola, soy JCT. ¿en qué puedo ayudarte?', 'bot');
+        }
+        input.focus();
+      }
+
+      function closeChat() {
+        opened = false;
+        win.classList.remove('is-open');
+        win.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+
+      toggle.addEventListener('click', () => (opened ? closeChat() : openChat()));
+      closeBtn.addEventListener('click', closeChat);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && opened) closeChat(); });
+
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const text = input.value.trim();
+        if (!text) return;
+
+        addMessage(text, 'user');
+        input.value = '';
+        input.disabled = true;
+        showTyping();
+
+        try {
+          const res = await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: text })
+          });
+
+          let reply = 'No pude obtener respuesta en este momento.';
+          if (res.ok) {
+            const data = await res.json().catch(() => null);
+            if (data) {
+              reply = data.reply || data.message || data.output || data.text || (typeof data === 'string' ? data : reply);
+            }
+          }
+          hideTyping();
+          addMessage(reply, 'bot');
+        } catch (err) {
+          hideTyping();
+          addMessage('Ocurrió un error de conexión. Intenta de nuevo en unos segundos.', 'bot');
+        } finally {
+          input.disabled = false;
+          input.focus();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
